@@ -164,6 +164,12 @@ document.addEventListener('alpine:init', () => {
             percent: 90,
             level: 'Advanced',
          },
+         {
+            ID: 11,
+            name: 'Bootstrap',
+            percent: 80,
+            level: 'Advanced',
+         },
       ],
    }))
 
