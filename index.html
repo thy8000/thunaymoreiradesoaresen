@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thunay Moreira de Soares - Desenvolvedor Fullstack</title>
+
+    <link href="./assets/css/all.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+
+  <body class="bg-neutral-900" x-data="header">
+    <header
+      id="header"
+      class="fixed top-0 left-0 w-full z-10 bg-neutral-800 border-b-2 border-green-500"
+    >
+      <div class="custom-container fade-in-3 transition duration-[3500ms] relative z-50">
+        <div class="flex justify-between items-center py-4">
+          <button x-on:click="displayMenu = !displayMenu">
+            <img
+              class="w-8"
+              x-bind:src="displayMenu ? '../thunaymoreiradesoares2/assets/images/close.svg' : '../thunaymoreiradesoares2/assets/images/hamburguer.svg'"
+            />
+          </button>
+
+          <div>
+            <span class="text-white text-lg font-poppins">
+              Thunay Moreira de Soares
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div x-bind:class="displayMenu ? 'block' : 'hidden'">
+        <div
+          class="absolute top-0 left-0 w-screen h-screen bg-black opacity-50 blur-xl"
+        ></div>
+
+        <div
+          class="fixed top-36 left-1/2 left-0 -translate-x-2/4 flex flex-col gap-8 opacity-100"
+        >
+          <h1
+            class="flex flex-col items-center text-5xl font-poppins font-semibold text-green-500"
+          >
+            Menu
+          </h1>
+
+          <ul class="flex flex-col items-center gap-8">
+            <template x-for="item in menuItems" x-on:key="item.ID">
+              <button
+                class="font-semibold text-3xl text-white hover:scale-150 transition-all duration-500 ease-linear"
+                x-on:click="goToElement(item.element)"
+                x-text="item.name"
+              ></button>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main x-bind:class="displayMenu ? 'blur' : ''">
+      <section
+        id="top-hero"
+        class="top-hero w-full h-screen bg-no-repeat bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black before:w-full before:h-full before:opacity-50"
+        x-data="hero"
+      >
+        <div
+          class="custom-container relative flex flex-col items-center justify-center gap-12 w-full h-full"
+        >
+          <h2
+            class="fade-in-3 transition duration-[3500ms] text-5xl lg:text-6xl font-poppins font-bold text-white text-center lg:text-start"
+          >
+            Thunay Moreira de Soares
+          </h2>
+
+          <h3
+            class="fade-in-3 transition duration-[4000ms] text-2xl lg:text-3xl font-medium tracking-[0.5rem] uppercase text-white text-center lg:text-start"
+          >
+            Desenvolvedor Full-Stack
+          </h3>
+
+          <div class="fade-in-3 transition duration-[4500ms] flex flex-wrap justify-center items-center gap-8">
+            <template x-for="social in socials" :key="social.ID">
+              <a
+                class="flex justify-center items-center w-16 h-16 border-2 border-neutral-700 bg-neutral-800 rounded p-3 hover:border-green-500"
+                x-bind:href="social.link"
+                target="_blank"
+              >
+                <img class="w-10" x-bind:src="social.image" />
+              </a>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <section id="about-me" class="w-full">
+        <div class="custom-container py-[10%] lg:py-[5%]">
+          <div
+            class="flex justify-center items-center lg:flex-row flex-col gap-8 border border-neutral-700 rounded p-8 bg-neutral-800"
+          >
+            <img
+              class="fade-in w-full max-w-[28rem]"
+              src="../thunaymoreiradesoares2/assets/images/imagem-thunay.png"
+            />
+
+            <span class="fade-in flex flex-col gap-4">
+              <h2 class="text-xl font-semibold font-poppins text-green-500">
+                Sobre mim
+              </h2>
+
+              <h3 class="fade-in text-2xl font-medium text-white font-poppins">
+                Thunay Moreira de Soares
+              </h3>
+
+              <h4 class="fade-in text-lg font-medium text-white font-poppins">
+                Desenvolvedor Fullstack / Desenvolvedor Wordpress
+              </h4>
+
+              <p class="fade-in text-neutral-300 leading-7">
+                Meu nome é Thunay Moreira de Soares, possuo 28 anos e moro em
+                Ribeirão Pires - SP. Sou formado em Tecnólogo de Análise e
+                Desenvolvimento de Sistemas na UNINOVE. Possuo 5 anos de
+                experiência com Desenvolvimento Fullstack. Meu principal foco é
+                no Desenvolvimento Web utilizando PHP e o framework Wordpress.
+                Atualmente trabalho como Desenvolvedor Wordpress na empresa
+                Buildbox IT Solutions.
+              </p>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" x-data="services">
+        <div
+          class="custom-container py-[10%] lg:py-[5%] mx-auto max-w-[1140px] flex justify-center flex-col lg:flex-row gap-20"
+        >
+          <div class="w-full lg:w-5/12">
+            <div class="services-content flex flex-col gap-8">
+              <h1
+                class="fade-in text-5xl font-poppins font-semibold text-green-500"
+              >
+                Serviços
+              </h1>
+
+              <div class="flex flex-col gap-4 text-white text-lg leading-7">
+                <p class="fade-in">
+                  Bem vindo ao meu universo! Onde transformo minhas idéias e
+                  códigos se transformam em experiências digitais excepcionais.
+                  Sou apaixonado por criar soluções personalizadas que não só
+                  atendem, mas superam as expectativas dos clientes.
+                </p>
+
+                <p class="fade-in">
+                  Confira os meus serviços e o que posso oferecer para você!
+                  Qual idéia podemos criar hoje ?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-7/12">
+            <div class="grid grid-col-1 lg:grid-cols-2 gap-4">
+              <template x-for="serviceType in servicesType">
+                <div
+                  class="fade-in flex flex-col justify-center items-center bg-neutral-800 border border-neutral-700 rounded gap-4 p-7"
+                  x-bind:class="`services-box-${serviceType.ID}`"
+                >
+                  <img class="w-12" x-bind:src="serviceType.image" />
+
+                  <h3
+                    class="text-center text-white font-semibold"
+                    x-text="serviceType.title"
+                  ></h3>
+
+                  <p
+                    class="text-center text-sm text-neutral-300"
+                    x-text="serviceType.description"
+                  ></p>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" x-data="skills">
+        <div class="custom-container py-[10%] lg:py-[5%] flex flex-col gap-12">
+          <div class="flex flex-col justify-center items-center gap-4">
+            <h2
+              class="fade-in text-5xl font-poppins font-semibold text-green-500"
+            >
+              Habilidades
+            </h2>
+
+            <h3 class="fade-in text-gray-300 text-lg leading-7">
+              Conheça minha experiência acadêmica e meus conhecimentos técnicos.
+            </h3>
+          </div>
+
+          <div class="flex">
+            <div class="flex flex-col gap-8 w-full">
+              <div>
+                <h4 class="fade-in text-white text-3xl">
+                  Conhecimento Técnico
+                </h4>
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <template
+                  x-for="skillList in skillsList"
+                  x-on:key="skillList.ID"
+                >
+                  <div
+                    class="fade-in flex flex-col gap-2"
+                    x-bind:class="`skill-${skillList.ID}`"
+                  >
+                    <div class="flex">
+                      <h5
+                        class="mb-1 text-lg font-semibold text-white font-poppins w-[80%]"
+                        x-text="skillList.name"
+                      ></h5>
+
+                      <h6
+                        class="flex justify-end w-[20%] text-neutral-300 text-sm font-bold font-poppins"
+                        x-text="skillList.level"
+                      ></h6>
+                    </div>
+
+                    <div class="w-full rounded-full h-[18px] mb-4">
+                      <div
+                        class="bg-green-500 bg-gradient-green-500 h-[18px] rounded-full"
+                        x-bind:style="`width: ${skillList.percent}%`"
+                      ></div>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="custom-container py-[10%] lg:py-[5%]">
+          <div class="flex lg:flex-row-reverse flex-col gap-20">
+            <div class="w-full lg:w-1/2 flex flex-col gap-8">
+              <h2
+                class="fade-in text-5xl font-poppins font-semibold text-green-500"
+              >
+                Experiência Profissional
+              </h2>
+
+              <h3 class="fade-in text-white text-lg leading-7">
+                Explore minha jornada profissional como Desenvolvedor, onde
+                busquei constantemente aprimorar minhas habilidades e contribuir
+                de forma significativa para projetos inovadores em empresas
+                incríveis.
+              </h3>
+            </div>
+
+            <div class="w-full lg:w-1/2">
+              <div
+                class="p-12 bg-neutral-800 border border-neutral-700 rounded"
+              >
+                <ol class="fade-in border-l-4 border-green-500">
+                  <li class="experience-1 fade-in">
+                    <div class="relative flex-start flex items-center">
+                      <div
+                        class="absolute -left-3 top-0 flex w-5 h-5 rounded-full bg-gradient-green-500"
+                      ></div>
+
+                      <div class="flex flex-col gap-2 pl-[23px]">
+                        <h4 class="-mt-2 text-xl font-semibold text-white">
+                          Desenvolvedor Back-End Júnior
+                        </h4>
+                        <h4 class="-mt-2 text-normal font-normal text-white">
+                          IT9 Marketing Digital
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="mb-6 ml-6 pb-6">
+                      <a href="#" class="text-sm text-white">2019 - 2022</a>
+                      <p class="mb-4 mt-2 text-neutral-300">
+                        Trabalhei como Desenvolvedor Back-End Júnior utilizando
+                        o framework Wordpress. Meu trabalho consistia em criar
+                        sites para clientes novos, realizar a manutenção de
+                        sites para os clientes antigos, e criar novas soluções e
+                        funcionalidades de acordo com a demanda e a necessidade
+                        dos clientes.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li class="experience-2 fade-in">
+                    <div class="relative flex-start flex items-center">
+                      <div
+                        class="absolute -left-3 flex w-5 h-5 rounded-full bg-gradient-green-500"
+                      ></div>
+
+                      <div class="flex flex-col gap-2 pl-[23px]">
+                        <h4 class="-mt-2 text-xl font-semibold text-white">
+                          Desenvolvedor Fullstack (Wordpress)
+                        </h4>
+
+                        <h4 class="-mt-2 text-normal font-normal text-white">
+                          Buildbox IT Solutions
+                        </h4>
+                      </div>
+                    </div>
+                    <div class="mb-6 ml-6 pb-6">
+                      <a href="#" class="text-sm text-white"
+                        >2022 - Atualmente</a
+                      >
+                      <p class="mb-4 mt-2 text-neutral-300">
+                        Atualmente trabalho como Desenvolvedor Fullstack
+                        utilizando o framework Wordpress. Meu trabalho consiste
+                        em criar sites para os clientes novos cujo o design seja
+                        fiel ao protótipo elaborado pelos Designers. Também
+                        realizo a manutenção dos sites de clientes antigos e
+                        crio novas soluções de acordo com as necessidades e
+                        demandas deles.
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" x-data="projects">
+        <div class="custom-container py-[10%] lg:py-[5%]">
+          <div class="flex flex-col">
+            <div
+              class="projects-title fade-in-2 flex flex-col justify-center items-center gap-4 text-center w-full"
+            >
+              <h2 class="text-5xl font-poppins font-semibold text-green-500">
+                Projetos
+              </h2>
+
+              <h3 class="max-w-prose text-gray-300 text-lg leading-7">
+                Confira meus projetos pessoais e sites que desenvolvi ao longo
+                da minha carreira.
+              </h3>
+            </div>
+
+            <div
+              class="projects-buttons fade-in-2 flex justify-center items-center flex-wrap gap-4 py-10"
+            >
+              <a
+                href="#"
+                class="personal-projects__button py-4 px-6 border-2 border-green-500 rounded-full cursor-pointer"
+                x-bind:class="{ 'personal-projects__button__active' : tab === 'all' }"
+                x-on:click.prevent="tab = 'all'"
+              >
+                <span class="text-white">Tudo</span>
+              </a>
+
+              <a
+                href="#"
+                class="personal-projects__button py-4 px-6 border-2 border-green-500 rounded-full cursor-pointer"
+                x-bind:class="{ 'personal-projects__button__active' : tab === 'web' }"
+                x-on:click.prevent="tab = 'web'"
+              >
+                <span class="text-white">Desenvolvimento Web</span>
+              </a>
+
+              <a
+                href="#"
+                class="personal-projects__button py-4 px-6 border-2 border-green-500 rounded-full cursor-pointer"
+                x-bind:class="{ 'personal-projects__button__active' : tab === 'games' }"
+                x-on:click.prevent="tab = 'games'"
+              >
+                <span class="text-white">Jogos</span>
+              </a>
+
+              <a
+                href="#"
+                class="personal-projects__button py-4 px-6 border-2 border-green-500 rounded-full cursor-pointer"
+                x-bind:class="{ 'personal-projects__button__active' : tab === 'mobile' }"
+                x-on:click.prevent="tab = 'mobile'"
+              >
+                <span class="text-white">App Mobile</span>
+              </a>
+
+              <a
+                href="#"
+                class="personal-projects__button py-4 px-6 border-2 border-green-500 rounded-full cursor-pointer"
+                x-bind:class="{ 'personal-projects__button__active' : tab === 'others' }"
+                x-on:click.prevent="tab = 'others'"
+              >
+                <span class="text-white">Outros</span>
+              </a>
+            </div>
+
+            <div class="projects-grid fade-in-2 grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <template x-for="project in projects" x-on:key="data.ID">
+                <div
+                  class="flex flex-col gap-8 p-5 bg-neutral-800 border border-neutral-700 rounded"
+                  x-show="tab === project.type || tab === 'all'"
+                >
+                  <div>
+                    <img
+                      class="w-full object-cover aspect-[300/180]"
+                      x-bind:src="project.image"
+                    />
+                  </div>
+
+                  <div class="flex flex-col gap-6 min-h-52">
+                    <div class="flex flex-col gap-4 h-1/2">
+                      <h3
+                        class="text-white text-lg font-bold font-poppins"
+                        x-text="project.title"
+                      ></h3>
+
+                      <div class="text-neutral-300">
+                        <p x-text="project.description"></p>
+                      </div>
+                    </div>
+
+                    <div class="flex gap-4 items-end h-1/2">
+                      <a
+                        class="personal-projects__button py-4 px-6 border-2 border-green-500 rounded-full cursor-pointer text-white"
+                        target="_blank"
+                        x-bind:href="project.link1.link"
+                        x-text="project.link1.name"
+                      >
+                      </a>
+
+                      <a
+                        class="personal-projects__button py-4 px-6 border-2 border-green-500 rounded-full cursor-pointer text-white"
+                        target="_blank"
+                        x-bind:href="project.link2.link"
+                        x-text="project.link2.name"
+                        x-show="project.link2.link !== ''"
+                      >
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="bg-neutral-800 mt-16" x-data="hero">
+      <div class="py-5">
+        <div class="custom-container">
+          <div class="flex justify-between items-center flex-col lg:flex-row gap-8 text-center lg:text-start">
+            <div>
+              <span class="text-lg font-poppins font-semibold text-green-500">
+                Sinta-se livre para entrar em contato comigo
+              </span>
+            </div>
+
+            <div>
+              <a
+                class="text-base font-semibold text-white hover:text-green-500 transition-all duration-500 cursor-pointer"
+                href="mailto:thunaymoreiradesoares@gmail.com"
+              >
+                thunaymoreiradesoares@gmail.com
+              </a>
+            </div>
+
+            <div class="flex gap-4">
+              <template x-for="social in socials" :key="social.ID">
+                <a
+                  class="flex justify-center items-center w-10 h-10 border-2 border-neutral-700 bg-neutral-800 rounded p-3 hover:border-green-500"
+                  x-bind:href="social.link"
+                  target="_blank"
+                >
+                  <img class="w-3.5" x-bind:src="social.image" />
+                </a>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/all.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+@import url('standarts/tailwind.css');
+@import url('standarts/fonts.css');
+@import url('standarts/container.css');
+@import url('standarts/background-colors.css');
+@import url('standarts/animations.css');
+
+@import url('components/top-hero.css');
+@import url('components/about-me.css');
+@import url('components/services.css');
+@import url('components/projects.css');
+@import url('components/skills.css');
+@import url('components/experience.css');
+
+.fade-in-slide {
+   opacity: 0;
+   transform: translateX(-200%);
+   transition: opacity 0.5s, transform 0.5s;
+}
