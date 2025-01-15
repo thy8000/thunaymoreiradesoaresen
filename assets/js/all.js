@@ -95,7 +95,7 @@ document.addEventListener('alpine:init', () => {
          {
             ID: 4,
             image: '../thunaymoreiradesoares2/assets/images/gear.svg',
-            title: 'Suport and Maintenance',
+            title: 'Support and Maintenance',
             description:
                'I offer continuous maintenance services to make your website and online presence remains updated, secure and functional.',
          },
