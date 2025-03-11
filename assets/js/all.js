@@ -59,7 +59,7 @@ document.addEventListener('alpine:init', () => {
          },
          {
             ID: 4,
-            link: 'https://drive.google.com/file/d/1ZvNuqc9GHQZyejmlgHA_j69WYDPqC0g8',
+            link: 'https://drive.google.com/file/d/1HVlp3IUIqzbat-Oh8z-DjF19xV-ZE9DR/view?usp=sharing',
             image: '../thunaymoreiradesoares2/assets/images/cv.svg',
          },
          {
