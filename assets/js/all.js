@@ -356,6 +356,22 @@ document.addEventListener('alpine:init', () => {
                link: '',
             },
          },
+         {
+            ID: 13,
+            type: 'web',
+            image: '../thunaymoreiradesoares2/assets/images/animelist-thunay-projetos-pessoais.png',
+            title: 'AnimeList',
+            description:
+               'A website built with HTML5, CSS3, JavaScript, Alpine, Tailwind and Wordpress. A website that list animes and mangas consuming the free AniList API.',
+            link1: {
+               name: 'Website',
+               link: 'https://animelist.thunaymoreiradesoares.com/',
+            },
+            link2: {
+               name: 'Github',
+               link: 'https://github.com/thy8000/AnimeList',
+            },
+         },
       ],
    }))
 })
